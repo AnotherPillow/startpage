@@ -1,0 +1,35 @@
+---
+export interface Props { 
+    action:string;
+    name:string;
+    placeholder:string;
+}
+const {action,name,placeholder} = Astro.props;
+/*
+Startpage {
+    action: "https://www.startpage.com/sp/search"
+    name: "q"
+    placeholder: "Search with Startpage"
+}
+DuckDuckGo {
+    action: "https://duckduckgo.com/"
+    name: "q"
+    placeholder: "Search with DuckDuckGo"
+}
+*/
+---
+
+<form method="GET" action={action}>
+    <input name={name} placeholder={placeholder} type="text" style="width:99.6%;height:120%">
+</form>
+<style>
+    input {
+        background-image: var(--search-gradient);
+        color:white;
+        border: 0;
+    }
+    input:focus {
+        /**change the outline color to the same as the background */
+        outline: 1px solid var(--search-gradient);
+    }
+</style>

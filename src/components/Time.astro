@@ -1,0 +1,28 @@
+<span id="currentTime"></span>
+<style>
+#currentTime {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+}
+/**make it render in the top left */
+#currentTime {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+</style>
+<script>
+    setInterval(()=>{
+        var currentTime = new Date().toLocaleString('en-GB', {
+            timeZone: 'Europe/London',
+            hourCycle: 'h23',
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        });
+            
+        document.getElementById("currentTime").innerHTML = currentTime;
+    }, 1000)
+    
+</script>

@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Time from '../components/Time.astro';
+import Search from '../components/Search.astro';
+import GradientTitle from '../components/GradientTitle.astro';
+---
+
+<Layout title="Welcome to Pillow's startpage">
+	<main>
+		<Time/>
+		<GradientTitle title="Welcome to Pillow's startpage"/>
+		<Search
+			action="https://duckduckgo.com/"
+			placeholder="Search with DuckDuckGo"
+			name="q"
+		/>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://github.com"
+				title="Github"
+				body=""
+				icon="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+				width="200"
+				height="200"
+			/>
+			<Card
+				href="https://youtube.com"
+				title="Youtube"
+				body=""
+				icon="https://i.imgur.com/k6RxC5M.png"
+				width="200"
+				height="200"
+			/>
+			<Card
+				href="https://reddit.com"
+				title="Reddit"
+				body=""
+				icon="https://www.redditinc.com/assets/images/site/reddit-logo.png"
+				width="200"
+				height="200"
+			/>
+			<Card
+				href="https://namemc.com"
+				title="NameMC"
+				body=""
+				icon="https://i.imgur.com/peLBdUD.png"
+				width="200"
+				height="200"
+			/>
+			<Card
+				href="https://discord.com"
+				title="Discord"
+				body=""
+				icon="https://i.imgur.com/02bY7gg.png"
+				width="200"
+				height="200"
+			/>
+			<Card
+				href="https://twitter.com"
+				title="Twitter"
+				body=""
+				icon="https://i.imgur.com/6GVOafT.png"
+				width="200"
+				height="200"
+			/>
+			<Card
+				href="https://nexusmods.com"
+				title="Nexus Mods"
+				body=""
+				icon="https://i.imgur.com/TOXOsKq.png"
+				width="200"
+				height="200"
+			/>
+			<Card
+				href="https://npmjs.com"
+				title="NPM"
+				body=""
+				icon="https://raw.githubusercontent.com/npm/logos/master/npm%20square/n-large.png"
+				width="200"
+				height="200"
+			/>
+
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 120ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+		color:whitesmoke;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
