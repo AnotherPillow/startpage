@@ -4,9 +4,11 @@ import Card from '../components/Card.astro';
 import Time from '../components/Time.astro';
 import Search from '../components/Search.astro';
 import GradientTitle from '../components/GradientTitle.astro';
+import SearchCommand from '../components/SearchCommand.astro';
 ---
 
 <Layout title="Welcome to Pillow's startpage">
+	<SearchCommand />
 	<main>
 		<Time/>
 		<GradientTitle title="Welcome to Pillow's startpage"/>
@@ -14,6 +16,7 @@ import GradientTitle from '../components/GradientTitle.astro';
 			action="https://duckduckgo.com/"
 			placeholder="Search with DuckDuckGo"
 			name="q"
+			smart="true"
 		/>
 		<ul role="list" class="link-card-grid">
 			<Card
@@ -96,25 +99,6 @@ import GradientTitle from '../components/GradientTitle.astro';
 		font-weight: 800;
 		margin: 0;
 		color:whitesmoke;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
 	}
 	.link-card-grid {
 		display: grid;

@@ -1,0 +1,72 @@
+<input type="text" id="search" onkeypress="if(event.keyCode===13) search()" placeholder="Search">
+
+<style>
+    /*make the input the full width of the page*/
+    #search {
+        width: 100%;
+        background-image: var(--search-gradient);
+        color:white;
+        border: 0;
+    }
+    input:focus {
+        /**change the outline color to the same as the background */
+        outline: 1px solid var(--search-gradient);
+    }
+</style>
+
+<script>
+    var SmartSearchBox = document.getElementById("search");
+    var searchEvent = SmartSearchBox.addEventListener("keypress", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            search();
+        }
+    });
+    function search() {
+        var query = (document.getElementById('search') as HTMLInputElement).value
+        var args = query.split(" ");
+
+        const command = args.shift();
+
+        switch (command) {
+            case 'dd':
+                window.location.href = 'https://duckduckgo.com/?q=' + args.join('+');
+                break;
+            case 'def':
+                window.location.href = 'https://dictionary.cambridge.org/dictionary/english/' + args[0];
+                break;
+            case 'yt':
+                window.location.href = 'https://www.youtube.com/results?search_query=' + args.join('+');
+                break;
+            case 'wi':
+                window.location.href = 'https://en.wikipedia.org/wiki/' + args.join('_');
+                break;
+            case 'g':
+                window.location.href = 'https://www.google.com/search?q=' + args.join('+');
+                break;
+            case 'gh':
+                window.location.href = 'https://github.com/search?q=' + args.join('+');
+                break;
+            case 're':
+                window.location.href = 'https://www.reddit.com/search?q=' + args.join('+');
+                break;
+            case 'tw':
+                window.location.href = 'https://twitter.com/search?q=' + args.join('+');
+                break;
+            case 'am':
+                window.location.href = 'https://www.amazon.com/s?k=' + args.join('+');
+                break;
+            case 'sof':
+                window.location.href = 'https://stackoverflow.com/search?q=' + args.join('+');
+                break;
+            case 'sp':
+                window.location.href = 'https://www.startpage.com/do/search?query=' + args.join('+');
+                break;
+            case 'npm':
+                window.location.href = 'https://www.npmjs.com/search?q=' + args.join('+');
+                break;
+            default:
+                window.location.href = 'https://www.google.com/search?q=' + query;
+        }
+    }
+</script>

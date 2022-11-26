@@ -1,10 +1,13 @@
 ---
+import SmartSearchBox from './SmartSearchBox.astro';
+
 export interface Props { 
     action:string;
     name:string;
     placeholder:string;
+    smart:string;
 }
-const {action,name,placeholder} = Astro.props;
+const {action,name,placeholder,smart} = Astro.props;
 /*
 Startpage {
     action: "https://www.startpage.com/sp/search"
@@ -19,9 +22,13 @@ DuckDuckGo {
 */
 ---
 
-<form method="GET" action={action}>
-    <input name={name} placeholder={placeholder} type="text" style="width:99.6%;height:120%">
-</form>
+{
+    smart==='true' ? 
+    <SmartSearchBox/> :
+    <form method="GET" action={action}>
+        <input name={name} placeholder={placeholder} type="text" style="width:99.6%;height:120%">
+    </form>
+}
 <style>
     input {
         background-image: var(--search-gradient);
